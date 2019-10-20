@@ -1,5 +1,9 @@
 @extends('layouts.main')
 @section('content')
+@php 
+    $lang = App::getLocale();
+@endphp
+
     <!-- start banner Area -->
     <section class="banner-area relative" id="home" @if($banner->home_banner) style="height: 25em; background: url('{{ asset('storage') .'/'. $banner->home_banner}}') no-repeat center; background-size: cover" @endif>
         <div class="overlay overlay-bg"></div>
@@ -34,13 +38,7 @@
                             </p>
                             @foreach($courses as $course)
                                 <a href="{{ route('course.show', ['course' => $course]) }}">
-                                    @if(App::getLocale() == 'uz')
-                                        {{ $course->course_name_uz }}
-                                    @elseif(App::getLocale() == 'ru')
-                                        {{ $course->course_name_ru }}
-                                    @elseif(App::getLocale() == 'en')
-                                        {{ $course->course_name_en }}
-                                    @endif
+                                    {{ $course->{'course_name_'.$lang} }}
                                 </a>
                                 <br>
                             @endforeach
@@ -60,13 +58,7 @@
                             </p>
                             @foreach($universities as $university)
                                 <a href="{{ route('universities.show', [ 'university' => $university]) }}">
-                                    @if(App::getLocale() == 'uz')
-                                        {{ $university->university_name_uz }}
-                                    @elseif(App::getLocale() == 'ru')
-                                        {{ $university->university_name_ru }}
-                                    @elseif(App::getLocale() == 'en')
-                                        {{ $university->university_name_en }}
-                                    @endif
+                                    {{ $university->{'university_name_'.$lang} }}
                                 </a>
                                 <br>
                             @endforeach
@@ -79,7 +71,7 @@
     <!-- End feature Area -->
 
     <!-- Start blog Area -->
-    <section class="blog-area section-gap" id="blog" style="position: relative; top: -1em">
+    <section class="blog-area section-gap" id="blog">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="menu-content pb-70 col-lg-8">
@@ -100,13 +92,7 @@
                         </p>
                         <a href="{{ route('single-news', ['post' => $post]) }}">
                             <h5>
-                                @if(App::getLocale() == 'uz')
-                                    {{ str_limit($post->title_uz, 85) }}
-                                @elseif(App::getLocale() == 'ru')
-                                    {{ str_limit($post->title_ru, 85) }}
-                                @elseif(App::getLocale() == 'en')
-                                    {{ str_limit($post->title_en, 85) }}
-                                @endif
+                                {{ str_limit($post->{'title_'.$lang}, 85) }}
                             </h5>
                         </a>
                         <p>

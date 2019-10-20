@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\About;
+use App\Gallery;
+use App\Benefit;
+use App\Schedule;
+use App\Teacher;
+use App\TestCenter;
+use App\Country;
+use App\Album;
 use App\Address;
 use App\Banner;
 use App\Blog;
@@ -135,13 +142,75 @@ class HomeController extends Controller
             'universities' => $universities
         ]);
     }
-    public function languages()
+    public function languages(Request $request)
     {
-        $banner = DB::table('banners')->select('courses_banner')->first();
-        $courses = Course::all();
+        $menu = SiteMenu::where('site_url', $request->getSchemeAndHttpHost().'/'.$request->path())->first();
         return view('frontend.languages', [
-            'banner' => $banner,
+            'menu' => $menu
+        ]);
+    }
+    public function classes()
+    {
+        $courses = Course::all();
+        return view('frontend.classes', [
             'courses' => $courses
+        ]);
+    }
+
+    public function schedules()
+    {
+        $schedules = Schedule::orderBy('created_at', 'DESC')->first();
+        return view('frontend.schedules', [
+            'schedules' => $schedules
+        ]);
+    }
+    public function teachers()
+    {
+        $teachers = Teacher::where('status', 'published')->get();
+        return view('frontend.teachers', [
+            'teachers' => $teachers
+        ]);
+    }
+
+    public function benefits(Request $request)
+    {
+        $bene = Benefit::where('status', 0)->get();
+        $menu = SiteMenu::where('site_url', $request->getSchemeAndHttpHost().'/'.$request->path())->first();
+        return view('frontend.benefits', [
+            'menu' => $menu,
+            'benefits' => $bene
+        ]);
+    }
+    public function gallery()
+    {
+        $albums = Album::all();
+        return view('frontend.albums', [
+            'albums' => $albums
+        ]);
+    }
+    public function galleryItems(Album $album)
+    {
+        $galleries = Gallery::where('album_id', $album->id)->first();
+        return view('frontend.gallery', [
+            'galleries' => $galleries,
+            'album' => $album
+        ]);
+    }
+    public function complexTest(Request $request)
+    {
+        $menu = SiteMenu::where('site_url', $request->getSchemeAndHttpHost().'/'.$request->path())->first();
+        $complexTests = TestCenter::orderBy('created_at', 'DESC')->first();
+        return view('frontend.complex-test', [
+            'menu' => $menu,
+            'complexTests' => $complexTests
+        ]);
+    }
+
+    public function workAndStudy()
+    {
+        $countries = Country::all();
+        return view('frontend.work-and-study',[
+            'countries' => $countries,
         ]);
     }
 }

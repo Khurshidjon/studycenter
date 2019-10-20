@@ -39,7 +39,16 @@ Route::get('/about-us', 'HomeController@aboutUs')->name('about-us');
 Route::post('/message', 'HomeController@subject')->name('subject');
 Route::get('/refresh-captcha', 'HomeController@captchaRefresh')->name('refresh_captcha');
 Route::get('/consulting', 'HomeController@consulting')->name('consulting');
-Route::get('/languages', 'HomeController@languages')->name('courses');
+Route::get('/languages', 'HomeController@languages')->name('languages');
+Route::get('/work-and-study', 'HomeController@workAndStudy')->name('work-and-study');
+Route::get('/classes', 'HomeController@classes')->name('courses');
+Route::get('/teachers', 'HomeController@teachers')->name('teachers');
+Route::get('/schedules', 'HomeController@schedules')->name('schedules');
+Route::get('/benefits', 'HomeController@benefits')->name('benefits');
+Route::get('/complex-testing-center', 'HomeController@complexTest')->name('complex-test');
+
+Route::get('/gallery', 'HomeController@gallery')->name('albums');
+Route::get('/gallery-items/{album}', 'HomeController@galleryItems')->name('gallery.items');
 
 
 Route::get('index/{lang}', function ($lang) {
@@ -49,11 +58,8 @@ Route::get('index/{lang}', function ($lang) {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
-    Route::get('/site-menus/create', 'HomeController@createSite')->name('voyager.site-menus.create');
     Route::post('/blogs', 'BlogController@store')->name('voyager.blogs.store');
     Route::put('/blogs/{blog}', 'BlogController@update')->name('voyager.blogs.update');
-    Route::get('/site-menus/{site_menu}/edit', 'HomeController@updateSiteMenu')->name('voyager.site-menus.edit');
-
 });
 
 Auth::routes();

@@ -1,6 +1,8 @@
 @extends('layouts.main')
 @section('content')
-
+@php
+    $lang = App::getLocale();
+@endphp
     <!-- start banner Area -->
     <section class="banner-area relative blog-home-banner" id="home" style="background: url('{{ asset('storage') .'/'. $posts->first()->image}}')">
         <div class="overlay overlay-bg"></div>
@@ -8,13 +10,7 @@
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="about-content blog-header-content col-lg-12">
                     <h1 class="text-white" style="max-width: 100em !important;">
-                        @if(App::getLocale() == 'uz')
-                            {{ $posts->first()->title_uz }}
-                        @elseif(App::getLocale() == 'ru')
-                            {{ $posts->first()->title_ru }}
-                        @elseif(App::getLocale() == 'en')
-                            {{ $posts->first()->title_en }}
-                        @endif
+                        {{ $posts->first()->{'title_'.$lang} }}
                     </h1>
                     <p class="text-white">
 
@@ -32,51 +28,37 @@
     <!-- End top-category-widget Area -->
 
     <!-- Start post-content Area -->
-    <section class="post-content-area">
-        <div class="container">
+    <section class="post-content-area" style="padding: 10px 10em">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-10 posts-list">
-                    @foreach($posts as $post)
-                        <div class="single-post row">
-                            <div class="col-lg-3  col-md-3 meta-details">
-                                <ul class="tags">
-                                    <li><a href="#">{{ $post->category->name }}</a></li>
-
-                                </ul>
-                                <div class="user-details row">
-                                    <p class="user-name col-lg-12 col-md-12 col-6"><a href="#">{{ $post->user->name }}</a> <span class="lnr lnr-user"></span></p>
-                                    <p class="date col-lg-12 col-md-12 col-6"><a href="#">{{ $post->created_at->format('d M, Y') }}</a> <span class="lnr lnr-calendar-full"></span></p>
-                                    <p class="view col-lg-12 col-md-12 col-6"><a href="#">{{ $post->view_count }} Views</a> <span class="lnr lnr-eye"></span></p>
-                                </div>
-                            </div>
-                            <div class="col-lg-9 col-md-9 ">
-                                <div class="feature-img">
-                                    <img class="img-fluid" src="{{ asset('storage') .'/'. $post->image }}" alt="">
-                                </div>
-                                <a class="posts-title" href="blog-single.html"><h3>
-                                        @if(App::getLocale() == 'uz')
-                                            {{ $post->title_uz }}
-                                        @elseif(App::getLocale() == 'ru')
-                                            {{ $post->title_ru }}
-                                        @elseif(App::getLocale() == 'en')
-                                            {{ $post->title_en }}
-                                        @endif
-                                    </h3></a>
+                @foreach($posts as $post)
+                    <div class="col-md-4 mb-5">
+                        <div class="single-post">
+                            <div>
+                                <a class="posts-title text-secondary" href="{{ route('single-news', ['post' => $post]) }}">
+                                    <div class="feature-img" style="height: 15rem; overflow:hidden">
+                                        <img class="img-fluid" src="{{ asset('storage') .'/'. $post->image }}" alt="" style="height: 100%;">
+                                    </div>
+                                    <b>{{ $post->{'title_'.$lang} }}</b>
+                                </a>
                                 <p class="excert">
-                                    @if(App::getLocale() == 'uz')
-                                        {{ $post->description_uz }}
-                                    @elseif(App::getLocale() == 'ru')
-                                        {{ $post->description_ru }}
-                                    @elseif(App::getLocale() == 'en')
-                                        {{ $post->description_en }}
-                                    @endif
+                                    {{ str_limit($post->{'description_'.$lang}, 100) }}
                                 </p>
-                                <a href="{{ route('single-news', ['post' => $post]) }}" class="primary-btn">@lang('pages.read_more_button')</a>
+                                <div class="container-fluid" style="position: absolute; bottom: 10%; top: 90%">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <p class="date"><a href="#">{{ $post->created_at->format('d M, Y') }}</a> <span class="lnr lnr-calendar-full"></span></p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="view"><a href="#">{{ $post->view_count }} Views</a> <span class="lnr lnr-eye"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    @endforeach
-                    {{ $posts->links('') }}
-                </div>
+                    </div>
+                @endforeach
+                    {{ $posts->links() }}
             </div>
         </div>
     </section>

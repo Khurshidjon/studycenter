@@ -23,5 +23,7 @@
         'language' => 'Language courses',
         'price_month' => 'Month',
         'price' => 'Price',
+        'schedules' => 'Schedules',
+        'teachers' => 'Teachers',
     ]
 ?>

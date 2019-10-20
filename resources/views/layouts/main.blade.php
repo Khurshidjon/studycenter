@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
+    @php
+        $lang = App::getLocale();   
+    @endphp
     <style>
         body{
             font-family: circe, "sans-serif" !important;
@@ -73,16 +76,40 @@
             top: 15em;
         }
         .single-blog .details-btn{
-            width: 100px;
+            width: 130px;
+            position: absolute;
+            bottom: 0;
+            top: 100%;
         }
         .single-blog .details-btn:hover{
             width: 200px;
+        }
+        @media (min-width: 768px)
+        {
+            .main-menu{
+                padding: 1em 13em !important;
+            }
         }
         .main-menu{
             background: rgba(0, 0, 0, 0.4);
         }
         .header-scrolled .main-menu{
             background: rgba(0, 0, 0, 0.1);
+        }
+        .single-blog{
+            position: relative;
+            margin-top: 1em;
+        }
+        #blog {
+            margin-bottom: 10em;
+        }
+        #blog .meta{
+            position: relative;
+            margin-top: 180px;
+        }
+        .thumb{
+            position: absolute;
+            height: 150px;   
         }
     </style>
 </head>
@@ -91,25 +118,26 @@
     <div class="header-top" id="app">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-sm-6 col-6 header-top-left no-padding">
+                <div class="col-lg-6 col-sm-6 col-12 header-top-left no-padding">
                     <ul>
                         <li><a href="{{ $social->facebook }}"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="{{ $social->telegram }}"><i class="fa fa-telegram"></i></a></li>
                         <li><a href="{{ $social->instagram }}"><i class="fa fa-instagram"></i></a></li>
                     </ul>
                 </div>
-                <div class="col-lg-6 col-sm-6 col-6 header-top-right no-padding">
+                <div class="col-lg-6 col-sm-6 col-12 header-top-right no-padding">
                     <a href="tel:{{ $address->phone }}"><span class="lnr lnr-phone-handset"></span> <span class="text">{{ $address->phone }}</span></a>
                     <a href="mailto:{{ $address->email }}"><span class="lnr lnr-envelope"></span> <span class="text">{{ $address->email }}</span></a>
                     <a href="{{ route('locale', ['lang' => 'ru']) }}"><span class="">РУС</span></a>
                     <a href="{{ route('locale', ['lang' => 'uz']) }}"> <span class="">O'ZB</span></a>
                     <a href="{{ route('locale', ['lang' => 'en']) }}"><span class="">ENG</span></a>
+                    <a href="{{ route('locale', ['lang' => 'jp']) }}"><span class="">日本語</span></a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid main-menu">
-        <div class="container">
+    <div class="container-fluid main-menu px-md-5 px-2">
+        <div class="">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo" >
                     <a href="{{ route('index') }}" class="text-uppercase">
@@ -123,25 +151,13 @@
                             @if($menu->sub_menu!=null)
                                 <li class="menu-has-children">
                                     <a href="{{ $menu->site_url }}">
-                                        @if(App::getLocale() == 'uz')
-                                            {{ $menu->menu_name_uz }}
-                                        @elseif(App::getLocale() == 'ru')
-                                            {{ $menu->menu_name_ru }}
-                                        @elseif(App::getLocale() == 'en')
-                                            {{ $menu->menu_name_en }}
-                                        @endif
+                                        {{ $menu->{'menu_name_'.$lang} }}
                                     </a>
                                     <ul>
                                         @foreach($menu->submenu as $submenu)
                                             <li>
                                                 <a href="{{ $submenu->site_url }}">
-                                                    @if(App::getLocale() == 'uz')
-                                                        {{ $submenu->menu_name_uz }}
-                                                    @elseif(App::getLocale() == 'ru')
-                                                        {{ $submenu->menu_name_ru }}
-                                                    @elseif(App::getLocale() == 'en')
-                                                        {{ $submenu->menu_name_en }}
-                                                    @endif
+                                                    {{ $submenu->{'menu_name_'.$lang} }}
                                                 </a>
                                             </li>
                                         @endforeach
@@ -150,13 +166,7 @@
                             @else
                                 <li>
                                     <a href="{{ $menu->site_url }}">
-                                        @if(App::getLocale() == 'uz')
-                                            {{ $menu->menu_name_uz }}
-                                        @elseif(App::getLocale() == 'ru')
-                                            {{ $menu->menu_name_ru }}
-                                        @elseif(App::getLocale() == 'en')
-                                            {{ $menu->menu_name_en }}
-                                        @endif
+                                        {{ $menu->{'menu_name_'.$lang} }}
                                     </a>
                                 </li>
                             @endif
@@ -177,13 +187,7 @@
                     <h4>@lang('pages.contacts')</h4>
                     <ul>
                         <li>
-                            @if(App::getLocale() == 'uz')
-                                {{ $address->address_name_uz }}
-                            @elseif(App::getLocale() == 'ru')
-                                {{ $address->address_name_ru }}
-                            @elseif(App::getLocale() == 'en')
-                                {{ $address->address_name_en }}
-                            @endif
+                            {{ $address->{'address_name_'.$lang} }}
                         </li>
                         <li>
                             {{ $address->phone }}
@@ -203,13 +207,7 @@
                         @foreach($footer_menus as $menu)
                             <li>
                                 <a href="{{ $menu->site_url }}">
-                                    @if(App::getLocale() == 'uz')
-                                        {{ $menu->menu_name_uz }}
-                                    @elseif(App::getLocale() == 'ru')
-                                        {{ $menu->menu_name_ru }}
-                                    @elseif(App::getLocale() == 'en')
-                                        {{ $menu->menu_name_en }}
-                                    @endif
+                                    {{ $menu->{'menu_name_'.$lang} }}
                                 </a>
                             </li>
                         @endforeach

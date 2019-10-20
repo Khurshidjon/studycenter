@@ -1,6 +1,9 @@
 @extends('layouts.main')
 @section('content')
 
+@php
+    $lang = App::getLocale();
+@endphp
 
     <!-- start banner Area -->
     <section class="banner-area relative about-banner" id="home" @if($banner->universities_banner) style="background: url('{{ asset('storage') .'/'. $banner->universities_banner}}')" @endif>
@@ -9,13 +12,7 @@
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="about-content col-lg-12">
                     <h1 class="text-white">
-                        @if(App::getLocale() == 'uz')
-                            {{ $university->university_name_uz }}
-                        @elseif(App::getLocale() == 'ru')
-                            {{ $university->university_name_ru }}
-                        @elseif(App::getLocale() == 'en')
-                            {{ $university->university_name_en }}
-                        @endif
+                        {{ $university->{'university_name_'.$lang} }}
                     </h1>
                     <p class="text-white link-nav">
                         <a href="{{ route('index') }}">Home </a>
@@ -23,23 +20,11 @@
                         <a href="#">Universities</a>
                         <span class="lnr lnr-arrow-right"></span>
                         <a href="{{ route('universities.index', ['country' => $university->country]) }}">
-                            @if(App::getLocale() == 'uz')
-                                {{ $university->country->country_uz }}
-                            @elseif(App::getLocale() == 'ru')
-                                {{ $university->country->country_ru }}
-                            @elseif(App::getLocale() == 'en')
-                                {{ $university->country->country_en }}
-                            @endif
+                            {{ $university->country->{'country_'.$lang} }}
                         </a>
                         <span class="lnr lnr-arrow-right"></span>
                         <a href="{{ route('universities.show', ['university' => $university]) }}">
-                            @if(App::getLocale() == 'uz')
-                                {{ $university->university_name_uz }}
-                            @elseif(App::getLocale() == 'ru')
-                                {{ $university->university_name_ru }}
-                            @elseif(App::getLocale() == 'en')
-                                {{ $university->university_name_en }}
-                            @endif
+                            {{ $university->{'university_name_'.$lang} }}
                         </a>
                     </p>
                 </div>
@@ -59,23 +44,11 @@
                     <div class="details-content">
                         <a href="#">
                             <h4>
-                                {{--@if(App::getLocale() == 'uz')
-                                    {{ $university->university_name_uz }}
-                                @elseif(App::getLocale() == 'ru')
-                                    {{ $university->university_name_ru }}
-                                @elseif(App::getLocale() == 'en')
-                                    {{ $university->university_name_en }}
-                                @endif--}}
+                                {{ $university->{'university_name_'.$lang} }}
                             </h4>
                         </a>
                         <p>
-                            @if(App::getLocale() == 'uz')
-                                {!! $university->university_content_uz !!}
-                            @elseif(App::getLocale() == 'ru')
-                                {!! $university->university_content_ru !!}
-                            @elseif(App::getLocale() == 'en')
-                                {!! $university->university_content_en !!}
-                            @endif
+                            {!! $university->{'university_content_'.$lang} !!}
                         </p>
                     </div>
                 </div>

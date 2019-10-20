@@ -14,7 +14,7 @@
         'home' => 'Bosh sahifa',
         'news' => 'Yangiliklar',
         'about_us' => 'Biz haqimizda',
-        'contacts' => 'Kntaktlar',
+        'contacts' => 'Kontaktlar',
         'consulting' => 'Konsalting',
         'languages' => 'Til kurslari',
         'send_message' => 'Xabarni jo\'natish',
@@ -23,5 +23,7 @@
         'language' => 'Til kurslari',
         'price_month' => 'Oyiga',
         'price' => 'Narxi',
+        'schedules' => 'Dars jadvali',
+        'teachers' => 'O\'qituvchilar',
     ]
 ?>
