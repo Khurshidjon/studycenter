@@ -5,7 +5,7 @@ $lang = App::getLocale();
 @endphp
 <style>
     .wrapper{
-        padding: 10em 2em;
+        padding: 12em 2em;
     }
     body{
         background-color: white;

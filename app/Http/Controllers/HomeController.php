@@ -43,7 +43,7 @@ class HomeController extends Controller
     {
         $posts = Blog::take(4)->get();
         $courses = Course::all();
-        $universities = University::all();
+        $universities = Country::all();
         $banner = DB::table('banners')->select('home_banner')->first();
         return view('frontend.index', [
             'posts' => $posts,

@@ -73,7 +73,7 @@
 
         }
         #text-banner{
-            top: 15em;
+            top: 21em;
         }
         .single-blog .details-btn{
             width: 130px;
@@ -90,8 +90,17 @@
                 padding: 1em 13em !important;
             }
         }
+            .main-menu  .navbar-brand{
+                height: 20em;
+                position: relative;
+            }
+            #header #logo img {
+                max-height: 9em;
+            }
+        }
         .main-menu{
             background: rgba(0, 0, 0, 0.4);
+            border: none !important; 
         }
         .header-scrolled .main-menu{
             background: rgba(0, 0, 0, 0.1);
@@ -110,6 +119,13 @@
         .thumb{
             position: absolute;
             height: 150px;   
+        }
+         .main-menu  .navbar-brand{
+            width: 5.5em !important;
+            height: 5.5em !important;
+        }
+        .wrapper .courses-container{
+            padding-top: 15em;
         }
     </style>
 </head>
@@ -136,13 +152,14 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid main-menu px-md-5 px-2">
+    <div class="container-fluid main-menu px-md-5 px-2" style="border-bottom: none; background-color:rgba(0, 0, 0, 0.4)">
         <div class="">
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo" >
                     <a href="{{ route('index') }}" class="text-uppercase">
-                        <span style="color: white; font-family: circus, 'sans-serif'">Silk road</span>
-                        <span style="color: white; font-family: circus, 'sans-serif'">global</span>
+                        <img src="{{ asset('img/new/srg_logo.jpg') }}" class="w-100 navbar-brand" alt="">
+                        {{-- <span style="color: white; font-family: circus, 'sans-serif'">Silk road</span> --}}
+                        {{-- <span style="color: white; font-family: circus, 'sans-serif'">global</span> --}}
                     </a>
                 </div>
                 <nav id="nav-menu-container">

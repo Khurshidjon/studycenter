@@ -36,12 +36,9 @@
                             <p>
                                 @lang('pages.home_banner_widget_one_text')
                             </p>
-                            @foreach($courses as $course)
-                                <a href="{{ route('course.show', ['course' => $course]) }}">
-                                    {{ $course->{'course_name_'.$lang} }}
-                                </a>
-                                <br>
-                            @endforeach
+                            <a class="btn" href="">Classes</a>
+                            <a class="btn" href="">Teachers</a>
+                            <a class="btn" href="">Schedules</a>
                         </div>
                     </div>
                 </div>
@@ -57,10 +54,9 @@
                                 @lang('pages.home_banner_widget_two_text')
                             </p>
                             @foreach($universities as $university)
-                                <a href="{{ route('universities.show', [ 'university' => $university]) }}">
-                                    {{ $university->{'university_name_'.$lang} }}
+                                <a class="btn" href="{{ route('universities.index', [ 'country' => $university]) }}">
+                                    {{ $university->{'country_'.$lang} }}
                                 </a>
-                                <br>
                             @endforeach
                         </div>
                     </div>

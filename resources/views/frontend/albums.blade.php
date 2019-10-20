@@ -2,7 +2,7 @@
 @section('content')
 <style>
 .gallery-container{
-    padding: 12em;
+    padding: 18em;
 }
 .gallery-title p{
     text-align: center;
