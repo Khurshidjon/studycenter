@@ -13,8 +13,15 @@ $lang = App::getLocale();
     .content{
         background: url("img/new/hand1.jpg");
         background-repeat: no-repeat;
-        background-size: 55%;
+        background-size: cover;
         background-position: right;
+    }
+    .content::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        /* background-color: rgba(0, 0, 0, 0.3); */
     }
     .header-section h3{
         border: 1px solid green;
@@ -26,13 +33,14 @@ $lang = App::getLocale();
         border-radius: 17px;
     }
     .benefits-items {
-        border: 1px solid green;
+        /* border: 1px solid green; */
+        text-align: center;
         border-radius: 20px;
         background-color: #fff;
-        padding: 20px;
+        padding: 25px;
         text-transform: uppercase;
         font-family:cursive;
-        margin: 28px;
+        margin: 25px;
     }
 </style>
 <div class="content">
@@ -46,6 +54,7 @@ $lang = App::getLocale();
                     @foreach ($benefits as $benefit)
                         <div class="col-md-4">
                             <div class="benefits-items">
+                                <img src="{{ asset('storage') .'/'. $benefit->image }}" style="width: 100%" alt="">
                                 {{ $benefit->{'benefit_'.$lang} }}
                             </div>
                         </div>

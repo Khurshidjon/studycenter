@@ -4,7 +4,7 @@
         'home_banner_button' => 'о нас',
         'home_banner_widget_one_title' => 'Языковой центр',
         'home_banner_widget_one_text' => 'Мы предлагаем вам языковые курсы высшего уровня',
-        'home_banner_widget_two_title' => 'Консалтинг',
+        'home_banner_widget_two_title' => 'Учеба и работа за рубежом',
         'home_banner_widget_two_text' => 'Вы хотите учиться в иностранном университете высшего уровня?',
         'home_banner_widget_button' => 'Связаться с нами',
         'we_offer_popular_courses_title' => 'Популярные курсы, которые мы предлагаем',
