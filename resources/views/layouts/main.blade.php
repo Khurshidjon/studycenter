@@ -235,7 +235,7 @@
                 <div class="single-footer-widget">
                     <h4>@lang('pages.address')</h4>
                     <div style="max-height: 17em">
-                        <iframe src="https://yandex.uz/map-widget/v1/-/CCbEJKO3"  style="width: 100%; height: 100%" frameborder="1" allowfullscreen="true"></iframe>
+                        <iframe src="https://yandex.uz/map-widget/v1/-/CGDvjY7Y" style="width: 100%; height: 100%" frameborder="1" allowfullscreen="true"></iframe>
                     </div>
                 </div>
             </div>
