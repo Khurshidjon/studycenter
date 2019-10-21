@@ -11,7 +11,7 @@
             <div class="row  align-items-center justify-content-between">
                 <div class="banner-content col-lg-9 col-md-12" id="text-banner">
                     <h1 class="text-uppercase" style="font-size: 35px; font-family: circe, 'sans-serif'">
-                        @lang('pages.banner_title')
+                        {{-- @lang('pages.banner_title') --}}
                     </h1>
                     <p class="pt-10 pb-10">
                     </p>
@@ -36,9 +36,9 @@
                             <p>
                                 @lang('pages.home_banner_widget_one_text')
                             </p>
-                            <a class="btn" href="">Classes</a>
-                            <a class="btn" href="">Teachers</a>
-                            <a class="btn" href="">Schedules</a>
+                        <a class="btn" href="{{ route('courses') }}">Classes</a>
+                            <a class="btn" href="{{ route('teachers') }}">Teachers</a>
+                            <a class="btn" href="{{ route('schedules') }}">Schedules</a>
                         </div>
                     </div>
                 </div>

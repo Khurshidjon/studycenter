@@ -121,8 +121,8 @@
             height: 150px;   
         }
          .main-menu  .navbar-brand{
-            width: 5.5em !important;
-            height: 5.5em !important;
+            width: 10em !important;
+            height: 3.5em !important;
         }
         .wrapper .courses-container{
             padding-top: 15em;
@@ -157,7 +157,7 @@
             <div class="row align-items-center justify-content-between d-flex">
                 <div id="logo" >
                     <a href="{{ route('index') }}" class="text-uppercase">
-                        <img src="{{ asset('img/new/srg_logo.jpg') }}" class="w-100 navbar-brand" alt="">
+                        <img src="{{ asset('img/new/srg_logo3.svg') }}" class="w-100 navbar-brand" alt="">
                         {{-- <span style="color: white; font-family: circus, 'sans-serif'">Silk road</span> --}}
                         {{-- <span style="color: white; font-family: circus, 'sans-serif'">global</span> --}}
                     </a>
