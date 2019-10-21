@@ -30,15 +30,16 @@
                     <div class="single-feature">
                         <div class="title">
                             <h4>
-                                <a href="{{ route('courses') }}" style="color: #ffffff !important;">@lang('pages.home_banner_widget_one_title')</a></h4>
+                                <a href="{{ route('courses') }}" style="color: #ffffff !important;">@lang('pages.home_banner_widget_one_title')</a>
+                            </h4>
                         </div>
                         <div class="desc-wrap">
                             <p>
                                 @lang('pages.home_banner_widget_one_text')
                             </p>
-                        <a class="btn" href="{{ route('courses') }}">Classes</a>
-                            <a class="btn" href="{{ route('teachers') }}">Teachers</a>
-                            <a class="btn" href="{{ route('schedules') }}">Schedules</a>
+                        <a class="btn" href="{{ route('courses') }}">@lang('pages.classes')</a>
+                            <a class="btn" href="{{ route('teachers') }}">@lang('pages.teachers')</a>
+                            <a class="btn" href="{{ route('schedules') }}">@lang('pages.schedules')</a>
                         </div>
                     </div>
                 </div>

@@ -24,6 +24,7 @@
         'price_month' => 'ヶ月',
         'price' => '代金',
         'schedules' => 'スケジュール',
+        'classes' => 'クラス',
         'teachers' => '先生方',
     ]
 ?>

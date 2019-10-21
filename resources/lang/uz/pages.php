@@ -25,5 +25,6 @@
         'price' => 'Narxi',
         'schedules' => 'Dars jadvali',
         'teachers' => 'O\'qituvchilar',
+        'classes' => 'Guruhlar'
     ]
 ?>

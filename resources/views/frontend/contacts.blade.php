@@ -40,7 +40,7 @@
             <hr>
             <div class="row">
                 <div class="map-wrap" style="width:100%; height: 445px;">
-                    <iframe src="https://yandex.uz/map-widget/v1/-/CCbEJKO3"  style="width: 100%; height: 100%" frameborder="1" allowfullscreen="true"></iframe>
+                    <iframe src="https://yandex.uz/map-widget/v1/-/CGDvjY7Y"  style="width: 100%; height: 100%" frameborder="1" allowfullscreen="true"></iframe>
                 </div>
                 <div class="col-lg-4 d-flex flex-column address-wrap">
                     <div class="single-contact-address d-flex flex-row">
