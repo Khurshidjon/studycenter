@@ -155,14 +155,14 @@
     <div class="container-fluid main-menu px-md-5 px-2" style="border-bottom: none; background-color:rgba(0, 0, 0, 0.4)">
         <div class="">
             <div class="row align-items-center justify-content-between d-flex">
-                <div id="logo" >
+                <div id="col-md-6" >
                     <a href="{{ route('index') }}" class="text-uppercase">
                         <img src="{{ asset('img/new/srg_logo3.svg') }}" class="w-100 navbar-brand" alt="">
                         {{-- <span style="color: white; font-family: circus, 'sans-serif'">Silk road</span> --}}
                         {{-- <span style="color: white; font-family: circus, 'sans-serif'">global</span> --}}
                     </a>
                 </div>
-                <nav id="nav-menu-container">
+                <nav id="col-md-6">
                     <ul class="nav-menu">
                         @foreach($menus as $menu)
                             @if($menu->sub_menu!=null)
