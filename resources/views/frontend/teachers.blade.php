@@ -83,7 +83,7 @@
         background-color:#dcdbdb47;
     }
     .courses-container{
-        background: url('img/new/bg3.jpg');
+        background: url("{{ asset('storage'.'/'.$back->teachers_image) }}");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

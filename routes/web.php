@@ -28,6 +28,12 @@ View::composer('layouts.main', function($views){
         ]);
 });
 
+Route::get('index/{lang}', function ($lang) {
+    \Session::put('lang', $lang);
+    return redirect()->back();
+})->name('locale');
+
+
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/news', 'HomeController@blog')->name('news');
 Route::get('/blog/{post}', 'HomeController@singleBlog')->name('single-news');
@@ -49,12 +55,6 @@ Route::get('/complex-testing-center', 'HomeController@complexTest')->name('compl
 
 Route::get('/gallery', 'HomeController@gallery')->name('albums');
 Route::get('/gallery-items/{album}', 'HomeController@galleryItems')->name('gallery.items');
-
-
-Route::get('index/{lang}', function ($lang) {
-    \Session::put('lang', $lang);
-    return redirect()->back();
-})->name('locale');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

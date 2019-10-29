@@ -87,7 +87,7 @@
         background-color:#dcdbdb47;
     }
     .courses-container{
-        background: url('img/new/bg2.jpg');
+        background:url("{{ asset('storage'.'/'.$back->language_courses_image) }}");;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

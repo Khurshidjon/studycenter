@@ -30,7 +30,7 @@
         background-color: #dcdbdb47;
     }
     .courses-container{
-        background: url('img/new/lang.jpg');
+        background: url("{{ asset('storage'.'/'.$back->trading_center_image) }}");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

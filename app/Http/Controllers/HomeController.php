@@ -19,6 +19,7 @@ use App\Post;
 use App\SiteMenu;
 use App\Subject;
 use App\University;
+use App\BackgroundImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -145,30 +146,38 @@ class HomeController extends Controller
     public function languages(Request $request)
     {
         $menu = SiteMenu::where('site_url', $request->getSchemeAndHttpHost().'/'.$request->path())->first();
+        $back = BackgroundImage::find(1);
         return view('frontend.languages', [
-            'menu' => $menu
+            'menu' => $menu,
+            'back' => $back
         ]);
     }
     public function classes()
     {
         $courses = Course::all();
+        $back = BackgroundImage::find(1);
         return view('frontend.classes', [
-            'courses' => $courses
+            'courses' => $courses,
+            'back' => $back
         ]);
     }
 
     public function schedules()
     {
         $schedules = Schedule::orderBy('created_at', 'DESC')->first();
+        $back = BackgroundImage::find(1);
         return view('frontend.schedules', [
-            'schedules' => $schedules
+            'schedules' => $schedules,
+            'back' => $back
         ]);
     }
     public function teachers()
     {
         $teachers = Teacher::where('status', 'published')->get();
+        $back = BackgroundImage::find(1);
         return view('frontend.teachers', [
-            'teachers' => $teachers
+            'teachers' => $teachers,
+            'back' => $back
         ]);
     }
 
@@ -209,8 +218,10 @@ class HomeController extends Controller
     public function workAndStudy()
     {
         $countries = Country::all();
+        $back = BackgroundImage::find(1);
         return view('frontend.work-and-study',[
             'countries' => $countries,
+            'back' => $back
         ]);
     }
 }

@@ -21,7 +21,7 @@
         height: 70%;
     }
     .feature-area{
-        background: url('img/new/country3.jpg');
+        background:url("{{ asset('storage'.'/'.$back->work_and_study_image) }}");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
