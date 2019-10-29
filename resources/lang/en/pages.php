@@ -2,9 +2,9 @@
     return [
         'banner_title' => 'Language <span>Center</span>',
         'home_banner_button' => 'about us',
-        'home_banner_widget_one_title' => 'Learning foreign languages',
+        'home_banner_widget_one_title' => 'Language center',
         'home_banner_widget_one_text' => 'Learn foreign languages ​​and let you open the doors of the world.',
-        'home_banner_widget_two_title' => 'Education abroad',
+        'home_banner_widget_two_title' => 'Work and study abroad',
         'home_banner_widget_two_text' => 'If you want to study abroad, please contact us.',
         'home_banner_widget_button' => 'Contact us',
         'we_offer_popular_courses_title' => 'Popular Courses we offer',

@@ -4,7 +4,7 @@
         'home_banner_button' => 'Biz haqimizda',
         'home_banner_widget_one_title' => 'Til markazi',
         'home_banner_widget_one_text' => 'Biz sizga yuqori darajadagi til kurslarini taklif qilamiz',
-        'home_banner_widget_two_title' => 'Chet tillarini o\'rganish',
+        'home_banner_widget_two_title' => 'Xorijda ish va o\'qish',
         'home_banner_widget_two_text' => 'Chet tillarini va biz sizga dunyo eshiklarini ochish imkonini beramiz.',
         'home_banner_widget_button' => 'Biz bilan bog\'lanish',
         'we_offer_popular_courses_title' => 'Biz taklif qilayotgan mashhur kurslar',
