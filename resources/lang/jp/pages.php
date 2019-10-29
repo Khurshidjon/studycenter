@@ -1,8 +1,8 @@
 <?php
     return [
         'banner_title' => '語学センター',
-        'home_banner_button' => '私たちに関しては',
-        'home_banner_widget_one_title' => '外国語を学ぶ',
+        'home_banner_button' => '会社について',
+        'home_banner_widget_one_title' => '語学センター',
         'home_banner_widget_one_text' => '外国語を学び、世界の扉を開きましょう。',
         'home_banner_widget_two_title' => '海外での教育',
         'home_banner_widget_two_text' => '留学を希望する場合は、お問い合わせください。',
@@ -20,7 +20,7 @@
         'send_message' => 'メッセージを送る',
         'address' => '住所',
         'links' => 'クイックリンク',
-        'language' => '語学コース',
+        'language' => '語学センター',
         'price_month' => 'ヶ月',
         'price' => '代金',
         'schedules' => 'スケジュール',
