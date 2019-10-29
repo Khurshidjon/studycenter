@@ -16,15 +16,6 @@
                 <h1 class="text-white">
                     {{ $country->{'country_'.$lang} }}
                 </h1>
-                <p class="text-white link-nav">
-                    <a href="{{ route('index') }}">@lang('pages.home') </a>
-                    <span class="lnr lnr-arrow-right"></span>
-                    <a href="{{ url()->previous() }}"></a>
-                    <span class="lnr lnr-arrow-right"></span>
-                    <a href="{{ route('universities.index', ['country' => $country]) }}">
-                        {{ $country->{'country_'.$lang} }}
-                    </a>
-                </p>
             </div>
         </div>
     </div>
@@ -35,16 +26,15 @@
     <div class="container">
         <div class="row align-items-center">
             @forelse($universities as $university)
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card">
                         <div class="card-header">
                             <img class="img-fluid" src="{{ asset('storage') .'/'. $university->university_image}}" alt="">
                         </div>
                         <div class="card-body">
                             {{ $university->{'university_name_'.$lang} }}
-                            <p>
-                                <a href="{{ route('universities.show', [ 'university' => $university]) }}" class="text-uppercase btn btn-secondary mx-auto mt-40">@lang('pages.read_more_button')</a>
-                            </p>
+                            <br>
+                            <a href="{{ route('universities.show', [ 'university' => $university]) }}" class="text-uppercase btn btn-secondary mx-auto mt-20" style="font-size: 13px">@lang('pages.read_more_button')</a>
                         </div>
                     </div>
                 </div>
