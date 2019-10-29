@@ -128,11 +128,11 @@
     
 <div class="content">
     <div class="gallery-container">
-        <div class="container">
+        <div class="container-fluid">
             <h3 class="p-3 text-secondary">{{ $album->{'album_name_'.$lang} }}</h3>
             <div class="row">
                 @foreach ($galleries as $key => $gallery)
-                    <div class="col-lg-4 col-md-4 col-12 col-xs-4">
+                    <div class="col-lg-2 col-md-2 col-12 col-xs-4">
                         <div class="card">
                             <div class="card-header">
                                 <a class="thumbnail " href="#" data-image-id="" data-toggle="modal" data-title=""
