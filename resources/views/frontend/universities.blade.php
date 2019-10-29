@@ -8,7 +8,7 @@
     background-size: cover !important;
 }
 .events-list-area{
-    margin-top: -40px;
+    margin-top: -83px;
 }
 </style>
 <section class="banner-area relative about-banner" id="home" @if($country->image != null) style="background: url('{{ asset('storage') .'/'. $country->image}}') center no-repeat" @endif>
