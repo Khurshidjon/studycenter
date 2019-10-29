@@ -87,7 +87,7 @@
         @media (min-width: 768px)
         {
             .main-menu{
-                padding: 1em 13em !important;
+                /* padding: 1em 13em !important; */
             }
         }
             .main-menu  .navbar-brand{
