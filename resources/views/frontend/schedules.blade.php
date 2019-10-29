@@ -105,9 +105,6 @@
 <div class="wrapper">
     <section class="event-details-area section-gap courses-container">
             <div class="container languages">
-                <div class="language-title">
-                    {{-- @lang('pages.schedules') --}}
-                </div>
                 <div class="row justify-content-start" >
                     <div class="col-md-12">
                         <div class="language-items">
