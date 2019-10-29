@@ -45,8 +45,8 @@
         padding: 16px 32px !important;
     }
     .languages .language-items{
-        border: .1em solid green;
-        border-radius: 50px;
+        /* border: .1em solid grey; */
+        /* border-radius: 50px; */
         min-height: 19em;
         font-size: 20px;
         padding: 55px;
@@ -61,7 +61,7 @@
         box-shadow: -1px 28px 13px -5px rgba(163,212,180,0.7); */
     }
     .languages .language-title{
-        border: .05em solid green;
+        /* border: .05em solid green; */
         background-color: white;
         border-radius: 20px;
         width: 20em;
@@ -83,11 +83,15 @@
         margin-left: -1.3em; /* same as padding-left set on li */
         width: 1.3em; /* same as padding-left set on li */
     }
+    .languages .language-items img{
+        width: 100%;
+    }
     .wrapper{
         background-color:#dcdbdb47;
+        margin-top: -80px; 
     }
     .courses-container{
-        background:url("{{ asset('storage'.'/'.$back->language_courses_image) }}");;
+        /* background:url("{{ asset('storage'.'/'.$back->language_courses_image) }}"); */
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -98,15 +102,13 @@
 @section('content')
 <div class="wrapper">
     <section class="event-details-area section-gap courses-container">
-            <div class="container-fluid languages">
-                <div class="language-title">
-                    @lang('pages.language')
-                </div>
+            <div class="container languages">
                 <div class="row justify-content-start" >
                     @foreach ($courses as $course)
-                        <div class="col-md-4">
-                            <div class="language-items" >
-                                <span>{{ $course->{'course_name_'.$lang} }}</span>
+                    <div class="col-md-12">
+                        <div class="language-items" >
+                                <span style="font-size: 25px;">{{ $course->{'course_name_'.$lang} }}</span>
+                                <br>
                                 {!! $course->{'course_content_'.$lang} !!}
                                 <span>@lang('pages.price'): {{ $course->course_price }}/@lang('pages.price_month')</span>                            
                             </div>
