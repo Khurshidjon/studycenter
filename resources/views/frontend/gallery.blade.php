@@ -21,7 +21,7 @@
         width: 100%;
     }
     .gallery-container{
-        padding: 12em 0;
+        padding: 10em 0;
         /* height: 30em; */
     }
 </style>

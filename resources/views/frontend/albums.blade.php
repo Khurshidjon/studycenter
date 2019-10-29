@@ -1,13 +1,10 @@
 @extends('layouts.main')
 @section('content')
 <style>
-.gallery-container{
-    padding: 18em;
-}
 .gallery-title p{
     text-align: center;
-    width: 20em;
-    margin:0 auto;
+    /* width: 20em; */
+    margin: 0 auto;
     border: 1px solid green;
     font-size: 14px;
     border-radius: 15px;
@@ -15,13 +12,14 @@
 }
 .feature-area{ 
     margin-top: -12em; 
+    padding: 16em 1em;
 }
 </style>
 @php
     $lang = App::getLocale();
 @endphp
 <section class="feature-area">
-        <div class="container-fluid gallery-container">
+        <div class="container-fluid">
             <section class="event-details-area section-gap">
                     <div class="container">
                         <div class="row">
