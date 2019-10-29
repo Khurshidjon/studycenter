@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <!-- start banner Area -->
-    <section class="banner-area relative about-banner" id="home" @if($banner->contacts_banner) style="background: url('{{ asset('storage') .'/'. $banner->contacts_banner}}') no-repeat; background-size: cover" @endif>
+    <section class="banner-area relative about-banner" id="home" @if($banner->contacts_banner) style="background: url('{{ asset('storage') .'/'. $banner->contacts_banner}}') no-repeat; background-position: 100% 100%" @endif>
         <div class="overlay overlay-bg"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
@@ -9,11 +9,14 @@
                     <h1 class="text-white">
                         @lang('pages.contacts')
                     </h1>
-                    <p class="text-white link-nav"><a href="{{ route('index') }}">@lang('pages.home') </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{ route('contact-us') }}"> @lang('pages.contacts')</a></p>
+                    {{-- <p class="text-white link-nav"><a href="{{ route('index') }}">@lang('pages.home') </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{ route('contact-us') }}"> @lang('pages.contacts')</a></p> --}}
                 </div>
             </div>
         </div>
     </section>
+    @php 
+        $lang = App::getLocale();
+    @endphp
     <!-- End banner Area -->
     @if ($message = \Session::get('alert'))
         <div class="alert alert-success alert-block">
@@ -27,13 +30,7 @@
         <div class="container">
             <div>
                 <p>
-                    @if(App::getLocale() == 'uz')
-                        {!! $contacts->text_uz !!}
-                    @elseif(App::getLocale() == 'ru')
-                        {!! $contacts->text_ru !!}
-                    @elseif(App::getLocale() == 'en')
-                        {!! $contacts->text_en !!}
-                    @endif
+                        {!! $contacts->{'text_'.$lang} !!}
                 </p>
             </div>
             <br>
@@ -49,13 +46,7 @@
                         </div>
                         <div class="contact-details">
                             <p>
-                                @if(App::getLocale() == 'uz')
-                                    {{ $contacts->address_name_uz }}
-                                @elseif(App::getLocale() == 'ru')
-                                    {{ $contacts->address_name_ru }}
-                                @elseif(App::getLocale() == 'en')
-                                    {{ $contacts->address_name_en }}
-                                @endif
+                                {{ $contacts->{'address_name_'.$lang} }}
                             </p>
                         </div>
                     </div>
