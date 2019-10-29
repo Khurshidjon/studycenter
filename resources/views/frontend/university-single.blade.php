@@ -4,7 +4,14 @@
 @php
     $lang = App::getLocale();
 @endphp
-
+<style>
+    .details-content img{
+        float: left;
+    }
+    .event-details-area{
+        margin-top: -4em;
+    }
+</style>
     <!-- start banner Area -->
     <section class="banner-area relative about-banner" id="home" @if($banner->universities_banner) style="background: url('{{ asset('storage') .'/'. $banner->universities_banner}}')" @endif>
         <div class="overlay overlay-bg"></div>
@@ -37,10 +44,12 @@
     <section class="event-details-area section-gap">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 event-details-left">
+                {{-- <div class="col-lg-3 event-details-left">
                     <div class="main-img">
                         <img class="img-fluid" src="{{ asset('storage') .'/'. $university->university_image}}" alt="">
                     </div>
+                </div> --}}
+                <div class="col-lg-12">
                     <div class="details-content">
                         <a href="#">
                             <h4>
@@ -51,7 +60,6 @@
                             {!! $university->{'university_content_'.$lang} !!}
                         </p>
                     </div>
-                </div>
                 </div>
             </div>
         </div>
