@@ -37,12 +37,14 @@ $lang = App::getLocale();
 </style>
 <div class="content">
     <div class="container wrapper">
-        <div class="card">
-            <div class="card-header">
-                {{ $complexTests->{'description_'.$lang} }}
-            </div>
-            <div class="card-body">
-                <img class="w-100" src="{{ asset('storage') .'/'. $complexTests->filname }}" alt="">
+        <div class=" card">
+            <div class="row card-body">
+                <div class="col-md-6">
+                    <img class="w-100" src="{{ asset('storage') .'/'. $complexTests->filname }}" alt="">
+                </div>
+                <div class="col-md-6">
+                    {{ $complexTests->{'description_'.$lang} }}
+                </div>
             </div>
         </div>
     </div>

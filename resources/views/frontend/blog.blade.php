@@ -3,8 +3,16 @@
 @php
     $lang = App::getLocale();
 @endphp
+<style>
+    .content:hover{
+        border: 1px solid grey;
+    }
+    .content{
+        font-size: 14px
+    }
+</style>
     <!-- start banner Area -->
-    <section class="banner-area relative blog-home-banner" id="home" style="background: url('{{ asset('storage') .'/'. $posts->first()->image}}')">
+    {{-- <section class="banner-area relative blog-home-banner" id="home" style="background: url('{{ asset('storage') .'/'. $posts->first()->image}}')">
         <div class="overlay overlay-bg"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
@@ -19,11 +27,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- End banner Area -->
 
     <!-- Start top-category-widget Area -->
-    <section class="top-category-widget-area pt-20 pb-90 ">
+    <section class="top-category-widget-area pt-90 pb-90 ">
     </section>
     <!-- End top-category-widget Area -->
 
@@ -32,7 +40,7 @@
         <div class="container-fluid">
             <div class="row">
                 @foreach($posts as $post)
-                    <div class="col-md-4 mb-5">
+                    <div class="col-md-3 mb-5 content">
                         <div class="single-post">
                             <div>
                                 <a class="posts-title text-secondary" href="{{ route('single-news', ['post' => $post]) }}">
