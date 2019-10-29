@@ -10,6 +10,7 @@ use App\Teacher;
 use App\TestCenter;
 use App\Country;
 use App\Album;
+use App\StudyCenter;
 use App\Address;
 use App\Banner;
 use App\Blog;
@@ -159,10 +160,12 @@ class HomeController extends Controller
     public function languages(Request $request)
     {
         $menu = SiteMenu::where('site_url', $request->getSchemeAndHttpHost().'/'.$request->path())->first();
+        $menus = StudyCenter::all();
         $back = BackgroundImage::find(1);
         return view('frontend.languages', [
             'menu' => $menu,
-            'back' => $back
+            'back' => $back,
+            'menus' => $menus
         ]);
     }
 

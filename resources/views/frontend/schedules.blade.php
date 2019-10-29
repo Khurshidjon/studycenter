@@ -8,6 +8,9 @@
         width: 100%;
         overflow: hidden;
     }
+    body{
+        background-color: white !important;
+    }
     .image {
         opacity: 1;
         display: block;
@@ -45,8 +48,8 @@
         padding: 16px 32px !important;
     }
     .languages .language-items{
-        border: .1em solid green;
-        border-radius: 50px;
+        /* border: .1em solid green; */
+        border-radius: 20px;
         min-height: 19em;
         font-size: 20px;
         padding: 55px;
@@ -61,9 +64,9 @@
         box-shadow: -1px 28px 13px -5px rgba(163,212,180,0.7); */
     }
     .languages .language-title{
-        border: .05em solid green;
+        /* border: .05em solid green; */
         background-color: white;
-        border-radius: 20px;
+        border-radius: 10px;
         width: 20em;
         font-size: 20px;
         padding: 15px;
@@ -84,7 +87,8 @@
         width: 1.3em; /* same as padding-left set on li */
     }
     .wrapper{
-        background-color:#dcdbdb47;
+        background-color:#ffffff;
+        margin-top: -90px;
     }
     .courses-container{
         background: url("{{ asset('storage'.'/'.$back->schedules_image) }}");
@@ -102,7 +106,7 @@
     <section class="event-details-area section-gap courses-container">
             <div class="container languages">
                 <div class="language-title">
-                    @lang('pages.schedules')
+                    {{-- @lang('pages.schedules') --}}
                 </div>
                 <div class="row justify-content-start" >
                     <div class="col-md-9">

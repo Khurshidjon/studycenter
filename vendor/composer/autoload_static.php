@@ -534,6 +534,7 @@ class ComposerStaticInit69cb74fa57e9a287b33fc27b0aa2eb7c
         'App\\SiteMenu' => __DIR__ . '/../..' . '/app/SiteMenu.php',
         'App\\Social' => __DIR__ . '/../..' . '/app/Social.php',
         'App\\Status' => __DIR__ . '/../..' . '/app/Status.php',
+        'App\\StudyCenter' => __DIR__ . '/../..' . '/app/StudyCenter.php',
         'App\\Subject' => __DIR__ . '/../..' . '/app/Subject.php',
         'App\\Teacher' => __DIR__ . '/../..' . '/app/Teacher.php',
         'App\\TestCenter' => __DIR__ . '/../..' . '/app/TestCenter.php',

@@ -57,6 +57,7 @@ return array(
     'App\\SiteMenu' => $baseDir . '/app/SiteMenu.php',
     'App\\Social' => $baseDir . '/app/Social.php',
     'App\\Status' => $baseDir . '/app/Status.php',
+    'App\\StudyCenter' => $baseDir . '/app/StudyCenter.php',
     'App\\Subject' => $baseDir . '/app/Subject.php',
     'App\\Teacher' => $baseDir . '/app/Teacher.php',
     'App\\TestCenter' => $baseDir . '/app/TestCenter.php',
