@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <!-- start banner Area -->
-    <section class="banner-area relative about-banner" id="home" @if($banner->contacts_banner) style="background: url('{{ asset('storage') .'/'. $banner->contacts_banner}}') no-repeat; background-position: 100% 90%" @endif>
+    <section class="banner-area relative about-banner" id="home" @if($banner->contacts_banner) style="background: url('{{ asset('storage') .'/'. $banner->contacts_banner}}') no-repeat; background-position: 100% 90%; background-size: cover;" @endif>
         <div class="overlay overlay-bg"></div>
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
