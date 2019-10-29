@@ -44,7 +44,7 @@
                         <div class="single-post">
                             <div>
                                 <a class="posts-title text-secondary" href="{{ route('single-news', ['post' => $post]) }}">
-                                    <div class="feature-img" style="height: 15rem; overflow:hidden">
+                                    <div class="feature-img" style="height: 13rem; overflow:hidden">
                                         <img class="img-fluid" src="{{ asset('storage') .'/'. $post->image }}" alt="" style="height: 100%;">
                                     </div>
                                     <b>{{ $post->{'title_'.$lang} }}</b>
