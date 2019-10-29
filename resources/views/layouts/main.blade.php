@@ -2,7 +2,7 @@
 <html lang="zxx" class="no-js">
 <head>
     <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{ asset('img/silkroad.png') }}">
     <!-- Author Meta -->
@@ -155,14 +155,14 @@
     <div class="container-fluid main-menu px-md-5 px-2" style="border-bottom: none; background-color:rgba(0, 0, 0, 0.4)">
         <div class="">
             <div class="row align-items-center justify-content-between d-flex">
-                <div id="col-md-6" >
+                <div id="logo" >
                     <a href="{{ route('index') }}" class="text-uppercase">
                         <img src="{{ asset('img/new/srg_logo3.svg') }}" class="w-100 navbar-brand" alt="">
                         {{-- <span style="color: white; font-family: circus, 'sans-serif'">Silk road</span> --}}
                         {{-- <span style="color: white; font-family: circus, 'sans-serif'">global</span> --}}
                     </a>
                 </div>
-                <nav id="col-md-6">
+                <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         @foreach($menus as $menu)
                             @if($menu->sub_menu!=null)
