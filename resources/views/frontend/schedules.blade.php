@@ -109,7 +109,7 @@
                     {{-- @lang('pages.schedules') --}}
                 </div>
                 <div class="row justify-content-start" >
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="language-items">
                             {!! $schedules->{'schedules_'.$lang} !!}
                         </div>
