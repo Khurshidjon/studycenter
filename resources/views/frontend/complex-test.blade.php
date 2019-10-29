@@ -11,7 +11,7 @@ $lang = App::getLocale();
         background-color: white;
     }
     .content{
-        background: url("img/new/hand1.jpg");
+        /* background: url("img/new/hand1.jpg"); */
         background-repeat: no-repeat;
         background-size: 55%;
         background-position: right;
@@ -37,9 +37,6 @@ $lang = App::getLocale();
 </style>
 <div class="content">
     <div class="container wrapper">
-        <div class="header-section mb-4">
-            <h3>{{ $menu->{'menu_name_'.$lang} }}</h3>
-        </div>
         <div class="card">
             <div class="card-header">
                 {{ $complexTests->{'description_'.$lang} }}
