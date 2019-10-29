@@ -88,10 +88,12 @@ class HomeController extends Controller
     public function aboutUs()
     {
         $abouts = About::first();
+        $bene = Benefit::where('status', 0)->get();
         $banner = DB::table('banners')->select('about_us_banner')->first();
         return view('frontend.about-us', [
             'abouts' => $abouts,
-            'banner' => $banner
+            'banner' => $banner,
+            'benefits' => $bene
         ]);
     }
     public function captchaRefresh()
@@ -124,6 +126,11 @@ class HomeController extends Controller
             'menus' => $menus
         ]);
     }
+
+
+
+
+
     public function updateSiteMenu(SiteMenu $site_menu)
     {
         $menus = SiteMenu::all();
@@ -132,6 +139,9 @@ class HomeController extends Controller
             'menus' => $menus,
         ]);
     }
+
+
+
     public function consulting()
     {
         $banner = DB::table('banners')->select('consulting_banner')->first();
@@ -143,6 +153,9 @@ class HomeController extends Controller
             'universities' => $universities
         ]);
     }
+    
+    
+    
     public function languages(Request $request)
     {
         $menu = SiteMenu::where('site_url', $request->getSchemeAndHttpHost().'/'.$request->path())->first();
@@ -152,6 +165,8 @@ class HomeController extends Controller
             'back' => $back
         ]);
     }
+
+
     public function classes()
     {
         $courses = Course::all();
@@ -184,10 +199,12 @@ class HomeController extends Controller
     public function benefits(Request $request)
     {
         $bene = Benefit::where('status', 0)->get();
+        $abouts = About::first();
         $menu = SiteMenu::where('site_url', $request->getSchemeAndHttpHost().'/'.$request->path())->first();
         return view('frontend.benefits', [
             'menu' => $menu,
-            'benefits' => $bene
+            'benefits' => $bene,
+            'abouts' => $abouts
         ]);
     }
     public function gallery()

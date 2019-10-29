@@ -26,5 +26,7 @@
         'schedules' => 'スケジュール',
         'classes' => 'クラス',
         'teachers' => '先生方',
+        'benefits' => '利点',
+
     ]
 ?>

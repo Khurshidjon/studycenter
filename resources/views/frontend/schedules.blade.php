@@ -100,7 +100,7 @@
 @section('content')
 <div class="wrapper">
     <section class="event-details-area section-gap courses-container">
-            <div class="container-fluid languages">
+            <div class="container languages">
                 <div class="language-title">
                     @lang('pages.schedules')
                 </div>
