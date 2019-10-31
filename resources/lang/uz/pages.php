@@ -27,5 +27,7 @@
         'teachers' => 'O\'qituvchilar',
         'classes' => 'Guruhlar',
         'benefits' => 'Afzalliklar',
+        'galleries' => 'Galeriya',
+
     ]
 ?>

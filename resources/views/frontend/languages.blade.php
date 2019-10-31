@@ -27,6 +27,15 @@
     .event-details-area{
         margin-top: -3em;
     }
+    .items img {
+        height: 70px;
+    }
+    .item-container .item-content{
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding-top: 10px;
+        box-shadow: 0 0 7px 1px grey;
+    }
 </style>
 @section('content')
 <div class="wrapper">
@@ -38,16 +47,20 @@
             <div class="row justify-content-center">
                     {{-- style="margin-top: -20px; padding-left: 70px" --}}
                 <div class="col-md-12 text-center" >
+                    <div class="row">
                     {{-- <ul class="list-group"> --}}
                         @foreach($menus as $item)
-                            {{-- <li class="card border-0"> --}}
-                                <a href="{{ $item->url }}" class="card-body  text-secondary" style="font-size: 17px;">
-                                    <img src="{{ asset('storage') .'/'. $item->image}}" class="" style="width: 70px;" alt="">
-                                    <p class="pt-3"> {{ $item->{'name_'.$lang} }}</p>
-                                </a>
-                            {{-- </li> --}}
+                            <div class="col-md-4 item-container">
+                                <div class="item-content">
+                                    <a href="{{ $item->url }}" class="text-secondary items" style="font-size: 17px;">
+                                        <img src="{{ asset('storage') .'/'. $item->image}}" class="" style="width: 70px;" alt="">
+                                        <p class="pt-3"> {{ $item->{'name_'.$lang} }}</p>
+                                    </a>
+                                </div>
+                            </div>
                         @endforeach
                     {{-- </ul> --}}
+                    </div>
                 </div>
                 <div class="col-md-8">
                     {{-- <img src="{{ asset('storage'.'/'.$back->trading_center_image) }}" style="width: 100%" alt=""> --}}

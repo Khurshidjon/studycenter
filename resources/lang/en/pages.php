@@ -27,5 +27,6 @@
         'teachers' => 'Teachers',
         'schedules' => 'Schedules',
         'benefits' => 'Benefits',
+        'galleries' => 'Gallery',
     ]
 ?>

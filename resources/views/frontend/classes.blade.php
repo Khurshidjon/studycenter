@@ -72,12 +72,12 @@
         font-family: Arial, Helvetica, sans-serif;
     }
     .languages .language-items li{
-        color: green;
+        color: grey;
         font-size: 17px;
-        padding-left: 50px;
+        /* padding-left: 50px; */
     }
     .languages .language-items ul li::before{
-        content: "\f058"; /* FontAwesome Unicode */
+        content: "\f00c"; /* FontAwesome Unicode */
         font-family: FontAwesome;
         display: inline-block;
         margin-left: -1.3em; /* same as padding-left set on li */
@@ -85,32 +85,37 @@
     }
     .languages .language-items img{
         width: 100%;
+        /* height: 100%; */
     }
     .wrapper{
-        background-color:#dcdbdb47;
+        background-color:#ffffff;
         margin-top: -80px; 
     }
     .courses-container{
-        /* background:url("{{ asset('storage'.'/'.$back->language_courses_image) }}"); */
+        background:url("{{ asset('storage'.'/'.$back->language_courses_image) }}");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         /* height: 90%; */
-        width: 100%;
+        width: 100%; 
     }
 </style>
 @section('content')
 <div class="wrapper">
     <section class="event-details-area section-gap courses-container">
             <div class="container languages">
-                <div class="row justify-content-start" >
+                <div class="row justify-content-center">
                     @foreach ($courses as $course)
-                    <div class="col-md-12">
-                        <div class="language-items" >
-                                <span style="font-size: 25px;">{{ $course->{'course_name_'.$lang} }}</span>
-                                <br>
-                                {!! $course->{'course_content_'.$lang} !!}
-                                <span>@lang('pages.price'): {{ $course->course_price }}/@lang('pages.price_month')</span>                            
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <div class="language-items" >
+                                    <span style="font-size: 25px; font-weight: bold; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">{{ $course->{'course_name_'.$lang} }}</span>
+                                    <br>
+                                    <br>
+                                        {!! $course->{'course_content_'.$lang} !!}
+                                    <br>
+                                    <span style="font-size: 20px; font-weight: bold; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">@lang('pages.price'): {{ $course->course_price }}/@lang('pages.price_month')</span>                            
+                                </div>
                             </div>
                         </div>
                     @endforeach

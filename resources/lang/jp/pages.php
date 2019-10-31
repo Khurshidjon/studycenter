@@ -27,6 +27,7 @@
         'classes' => 'クラス',
         'teachers' => '先生方',
         'benefits' => '利点',
+        'galleries' => 'ギャラリー',        
 
     ]
 ?>

@@ -44,6 +44,7 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Blog::take(4)->get();
+        $albums = Album::all();
         $courses = Course::all();
         $universities = Country::all();
         $banner = DB::table('banners')->select('home_banner')->first();
@@ -51,7 +52,8 @@ class HomeController extends Controller
             'posts' => $posts,
             'courses' => $courses,
             'banner' => $banner,
-            'universities' => $universities
+            'universities' => $universities,
+            'albums' => $albums,
         ]);
     }
     public function contacts()

@@ -83,7 +83,8 @@
                         <a href="{{ route('single-news', ['post' => $post]) }}" class="thumb">
                             <img class="img-fluid" src="{{ asset('storage') .'/'. $post->image }}" alt="">
                         </a>
-                        <p class="meta">{{ $post->created_at->format("d F, Y") }} | <i class="fa fa-user-circle"></i> <a href="#">
+                        <p class="meta">{{ $post->created_at->format("d F, Y") }} | <i class="fa fa-user-circle"></i> 
+                            <a href="#">
                                 {{ $post->user->name }}
                             </a>
                         </p>
@@ -102,4 +103,33 @@
         </div>
     </section>
     <!-- End blog Area -->
+
+
+    {{-- Start Album area --}}
+
+
+    <section class="blog-area section-gap" id="blog">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-8">
+                    <div class="title text-center">
+                        <h1 class="mb-10" style="text-transform: uppercase">@lang('pages.galleries')</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($albums as $album)
+                    <div class="col-lg-4 col-md-6 card">
+                        <a href="{{ route('gallery.items', ['album' => $album]) }}" class="card-body">
+                            <img class="img-fluid" src="{{ asset('storage') .'/'. $album->filename }}" alt="">
+                            {{ $album->{'album_name_'.$lang} }}
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+
+    {{-- End Album Area --}}
 @endsection
