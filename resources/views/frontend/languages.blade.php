@@ -42,7 +42,7 @@
     <section class="event-details-area section-gap courses-container">
         <div class="container languages">
             <div class="language-title text-uppercase">
-                {{ $menu->{'menu_name_'.$lang} }}
+                {{-- {{ $menu->{'menu_name_'.$lang} }} --}}
             </div>
             <div class="row justify-content-center">
                     {{-- style="margin-top: -20px; padding-left: 70px" --}}

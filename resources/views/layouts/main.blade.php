@@ -165,7 +165,7 @@
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         @foreach($menus as $menu)
-                            @if($menu->sub_menu!=null)
+                            @if($menu->sub_menu != null)
                                 <li class="menu-has-children">
                                     <a href="{{ $menu->site_url }}">
                                         {{ $menu->{'menu_name_'.$lang} }}
