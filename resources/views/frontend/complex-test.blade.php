@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-@php 
+@php
 $lang = App::getLocale();
 @endphp
 <style>
@@ -42,7 +42,7 @@ $lang = App::getLocale();
                 <div class="col-md-6">
                     <img class="w-100" src="{{ asset('storage') .'/'. $complexTests->filname }}" alt="">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 my-auto">
                     {{ $complexTests->{'description_'.$lang} }}
                 </div>
             </div>

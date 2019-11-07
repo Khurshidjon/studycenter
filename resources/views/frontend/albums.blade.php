@@ -10,9 +10,17 @@
     border-radius: 15px;
     padding: 1em;
 }
-.feature-area{ 
-    margin-top: -12em; 
+.feature-area{
+    margin-top: -12em;
     padding: 16em 1em;
+}
+.card-header{
+    height: 10em;
+    overflow: hidden;
+    text-align: center;
+}
+.card-header img{
+    height: 100%;
 }
 </style>
 @php

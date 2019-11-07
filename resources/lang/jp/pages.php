@@ -4,7 +4,7 @@
         'home_banner_button' => '会社について',
         'home_banner_widget_one_title' => '語学センター',
         'home_banner_widget_one_text' => '外国語を学び、世界の扉を開きましょう。',
-        'home_banner_widget_two_title' => '海外での教育',
+        'home_banner_widget_two_title' => 'Work & Study Abroad',
         'home_banner_widget_two_text' => '留学を希望する場合は、お問い合わせください。',
         'home_banner_widget_button' => 'お問い合わせ',
         'we_offer_popular_courses_title' => '人気のコース',
@@ -13,7 +13,7 @@
         'read_more_button' => '詳細',
         'home' => 'ホーム',
         'news' => 'ニュース',
-        'about_us' => '私たちに関しては',
+        'about_us' => '会社について',
         'contacts' => '連絡先',
         'consulting' => 'コンサルティング',
         'languages' => '語学コース',
@@ -27,7 +27,7 @@
         'classes' => 'クラス',
         'teachers' => '先生方',
         'benefits' => '利点',
-        'galleries' => 'ギャラリー',        
+        'galleries' => 'ギャラリー',
 
     ]
 ?>

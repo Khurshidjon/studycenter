@@ -63,7 +63,7 @@
         <div class="header-section">
             <h3 class="mr-auto">@lang('pages.benefits')</h3>
         </div>
-        <div class="row justify-content-center" style="margin-bottom: 50px">
+        <div class="row" style="margin-bottom: 50px">
             @foreach ($benefits as $benefit)
             <div class="col-md-3">
                 <div class="row">
@@ -72,7 +72,7 @@
                             <img src="{{ asset('storage') .'/'. $benefit->image }}" class="" style="margin: 1px; width: 100%;" alt="">
                         </div>
                     </div>
-                    <div class="col-6" style="padding-top: 15px;">
+                    <div class="col-md-6" style="padding-top: 15px;">
                         <p>{!! $benefit->{'benefit_'.$lang} !!}</p>
                     </div>
                 </div>

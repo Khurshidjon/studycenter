@@ -3,7 +3,18 @@
 @php
     $lang = App::getLocale();
 @endphp
-
+<style>
+    .gallery-area .card-body{
+        height: 14em;
+        overflow: hidden;
+        text-align: center;
+        padding-bottom: 40px;
+        color: green;
+    }
+    .gallery-area .card-body img{
+        height: 100%;
+    }
+</style>
     <!-- start banner Area -->
     <section class="banner-area relative" id="home" @if($banner->home_banner) style="height: 25em; background: url('{{ asset('storage') .'/'. $banner->home_banner}}') no-repeat center; background-size: cover" @endif>
         <div class="overlay overlay-bg"></div>
@@ -35,7 +46,7 @@
                         </div>
                         <div class="desc-wrap">
                             <p>
-                                @lang('pages.home_banner_widget_one_text')
+{{--                                @lang('pages.home_banner_widget_one_text')--}}
                             </p>
                         <a class="btn" href="{{ route('courses') }}">@lang('pages.classes')</a>
                             <a class="btn" href="{{ route('teachers') }}">@lang('pages.teachers')</a>
@@ -52,7 +63,7 @@
                         </div>
                         <div class="desc-wrap">
                             <p>
-                                @lang('pages.home_banner_widget_two_text')
+{{--                                @lang('pages.home_banner_widget_two_text')--}}
                             </p>
                             @foreach($universities as $university)
                                 <a class="btn" href="{{ route('universities.index', [ 'country' => $university]) }}">
@@ -117,12 +128,12 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row gallery-area">
                 @foreach($albums as $album)
                     <div class="col-lg-4 col-md-6 card">
                         <a href="{{ route('gallery.items', ['album' => $album]) }}" class="card-body">
-                            <img class="img-fluid" src="{{ asset('storage') .'/'. $album->filename }}" alt="">
-                            {{ $album->{'album_name_'.$lang} }}
+                            <img class="card-img-top rounded" src="{{ asset('storage') .'/'. $album->filename }}" alt="">
+                            <p class="mt-2">{{ $album->{'album_name_'.$lang} }}</p>
                         </a>
                     </div>
                 @endforeach
