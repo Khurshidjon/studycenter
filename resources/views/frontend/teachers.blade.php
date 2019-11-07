@@ -4,7 +4,7 @@
 @endphp
 <style>
 
-   
+
     .card{
         border-radius: 5px!important;
         font-family: sans-serif;
@@ -31,11 +31,19 @@
         border-radius: 5px;
         width: 100%;
     }
+    .card-header{
+        height: 20em;
+        overflow: hidden;
+        text-align: center;
+    }
+    .card-header img{
+        height: 100%;
+    }
 </style>
 @section('content')
 <div class="wrapper">
     <section class="event-details-area section-gap courses-container">
-            <div class="container languages">
+            <div class="container ">
                 <div class="row">
                     @foreach ($teachers as $teacher)
                         <div class="col-md-3">
