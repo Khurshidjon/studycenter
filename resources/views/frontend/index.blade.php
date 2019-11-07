@@ -82,7 +82,7 @@
     <section class="blog-area section-gap" id="blog">
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="menu-content pb-70 col-lg-8">
+                <div class="menu-content pb-20 col-lg-8">
                     <div class="title text-center">
                         <h1 class="mb-10" style="text-transform: uppercase">@lang('pages.latest_posts')</h1>
                     </div>
