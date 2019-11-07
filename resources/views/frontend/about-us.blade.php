@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-@php 
+@php
     $lang = App::getLocale();
 @endphp
 <style>
@@ -30,7 +30,7 @@
         margin-bottom: 25px;
     }
     body{
-        background-color: white; 
+        background-color: white;
     }
     .card-body{
          position: absolute;
@@ -50,7 +50,7 @@
                     <h1 class="text-white">
                         @lang('pages.about_us')
                     </h1>
-                    <p class="text-white link-nav"><a href="{{ route('index') }}">@lang('pages.home') </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{ route('about-us') }}"> @lang('pages.about_us')</a></p>
+{{--                    <p class="text-white link-nav"><a href="{{ route('index') }}">@lang('pages.home') </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{ route('about-us') }}"> @lang('pages.about_us')</a></p>--}}
                 </div>
             </div>
         </div>

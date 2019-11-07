@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="362ceebd-7e28-4774-82d8-295fff8426ab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/teachers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/teachers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/universities.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/universities.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/university-single.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/university-single.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/storage/app/public/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/about-us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/about-us.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,9 +37,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PhpServers">
-    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -152,8 +147,11 @@
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -206,7 +204,7 @@
       <workItem from="1557479425949" duration="1312000" />
       <workItem from="1557684300173" duration="1982000" />
       <workItem from="1557829283311" duration="1403000" />
-      <workItem from="1573101538750" duration="1618000" />
+      <workItem from="1573101538750" duration="2632000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-@php 
+@php
     $lang = App::getLocale();
 @endphp
 
@@ -30,7 +30,7 @@
                     <div class="single-feature">
                         <div class="title">
                             <h4>
-                                <a href="{{ route('courses') }}" style="color: #ffffff !important;">@lang('pages.home_banner_widget_one_title')</a>
+                                <a href="{{ route('languages') }}" style="color: #ffffff !important;">@lang('pages.home_banner_widget_one_title')</a>
                             </h4>
                         </div>
                         <div class="desc-wrap">
@@ -47,7 +47,7 @@
                     <div class="single-feature">
                         <div class="title">
                             <h4>
-                                <a style="color: #ffffff !important;" href="{{ route('consulting') }}">@lang('pages.home_banner_widget_two_title')</a>
+                                <a style="color: #ffffff !important;" href="{{ route('work-and-study') }}">@lang('pages.home_banner_widget_two_title')</a>
                             </h4>
                         </div>
                         <div class="desc-wrap">
@@ -83,7 +83,7 @@
                         <a href="{{ route('single-news', ['post' => $post]) }}" class="thumb">
                             <img class="img-fluid" src="{{ asset('storage') .'/'. $post->image }}" alt="">
                         </a>
-                        <p class="meta">{{ $post->created_at->format("d F, Y") }} | <i class="fa fa-user-circle"></i> 
+                        <p class="meta">{{ $post->created_at->format("d F, Y") }} | <i class="fa fa-user-circle"></i>
                             <a href="#">
                                 {{ $post->user->name }}
                             </a>
