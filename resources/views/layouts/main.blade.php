@@ -34,25 +34,28 @@
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
     @php
-        $lang = App::getLocale();   
+        $lang = App::getLocale();
     @endphp
     <style>
         body{
-            font-family: circe, "sans-serif" !important;
+            font-family: "Times New Roman", 'sans-serif' !important;
             font-size: 18px !important;
             background-color: #f9f9f9;
         }
         h1, h2, h3, h4, h5, h6, p, a{
-            font-family: 'circe', "sans-serif" !important;
+            font-family:  "Times New Roman", 'sans-serif' !important;
         }
         .banner-area .overlay-bg{
             background-color: rgba(4,9,30,0.5);
         }
         .banner-content .primary-btn{
-            background-color: #95CA4B;
+            background-color: #546bb1 ;
         }
         .single-feature:hover .title{
-            background: rgba(89,227,216,0.9);
+            background: rgba(84,107,177,0.9);
+        }
+        .single-feature:hover a {
+            color: #546bb1 !important;
         }
         .banner-content {
             font-size: 10px !important;
@@ -68,7 +71,7 @@
         }
         @media (max-width: 991px){
             .single-feature .title {
-                background: rgba(76, 182, 100, 0.8);
+                background: rgba(84, 107, 177, 0.9);
             }
 
         }
@@ -100,7 +103,7 @@
         }
         .main-menu{
             background: rgba(0, 0, 0, 0.4);
-            border: none !important; 
+            border: none !important;
         }
         .header-scrolled .main-menu{
             background: rgba(0, 0, 0, 0.1);
@@ -118,7 +121,7 @@
         }
         .thumb{
             position: absolute;
-            height: 150px;   
+            height: 150px;
         }
          .main-menu  .navbar-brand{
             width: 10em !important;
@@ -130,7 +133,7 @@
     </style>
 </head>
 <body>
-<header id="header" id="home">
+<header id="header">
     <div class="header-top" id="app">
         <div class="container">
             <div class="row">

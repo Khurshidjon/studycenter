@@ -4,14 +4,27 @@
     $lang = App::getLocale();
 @endphp
 <style>
+
     .gallery-area .card-body{
         height: 14em;
         overflow: hidden;
         text-align: center;
         padding-bottom: 40px;
-        color: green;
+        color: #546bb1;
     }
     .gallery-area .card-body img{
+        height: 100%;
+    }
+    .post-area .card-body{
+        height: 18em;
+        overflow: hidden;
+        padding-bottom: 110px;
+        padding-left: 1px;
+        text-justify: auto;
+        padding-right: 1px;
+        color: #546bb1;
+    }
+    .post-area .card-body img{
         height: 100%;
     }
 </style>
@@ -21,12 +34,9 @@
         <div class="container">
             <div class="row  align-items-center justify-content-between">
                 <div class="banner-content col-lg-9 col-md-12" id="text-banner">
-                    <h1 class="text-uppercase" style="font-size: 35px; font-family: circe, 'sans-serif'">
-                        {{-- @lang('pages.banner_title') --}}
-                    </h1>
                     <p class="pt-10 pb-10">
                     </p>
-                    <a href="{{ route('about-us') }}"  style="position: relative; color: greenyellow; background: rgba(0,0,0,0.4); font-size: 2em; height: 2em; padding: 0 1.5em" class="primary-btn text-uppercase">@lang('pages.home_banner_button')</a>
+                    <a href="{{ route('about-us') }}"  style="position: relative; color: #546bb1 ; background: rgba(0,0,0,0.4); font-size: 2em; height: 2em; padding: 0 1.5em;" class="primary-btn text-uppercase">@lang('pages.home_banner_button')</a>
                 </div>
             </div>
         </div>
@@ -79,35 +89,36 @@
     <!-- End feature Area -->
 
     <!-- Start blog Area -->
-    <section class="blog-area section-gap" id="blog">
+    <section>
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="menu-content pb-20 col-lg-8">
+                <div class="menu-content pb-20 mt-20 col-lg-8">
                     <div class="title text-center">
                         <h1 class="mb-10" style="text-transform: uppercase">@lang('pages.latest_posts')</h1>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row post-area">
                 @foreach($posts as $post)
-                    <div class="col-lg-3 col-md-6 single-blog">
-                        <a href="{{ route('single-news', ['post' => $post]) }}" class="thumb">
-                            <img class="img-fluid" src="{{ asset('storage') .'/'. $post->image }}" alt="">
-                        </a>
-                        <p class="meta">{{ $post->created_at->format("d F, Y") }} | <i class="fa fa-user-circle"></i>
-                            <a href="#">
-                                {{ $post->user->name }}
+                    <div class="col-lg-4 col-md-6 card">
+                        <div class="card-body">
+                            <a href="{{ route('single-news', ['post' => $post]) }}">
+                                <img class="card-img-top rounded" src="{{ asset('storage') .'/'. $post->image }}" alt="">
                             </a>
-                        </p>
-                        <a href="{{ route('single-news', ['post' => $post]) }}">
-                            <h5>
-                                {{ str_limit($post->{'title_'.$lang}, 85) }}
-                            </h5>
-                        </a>
-                        <p>
-                            {{ $post->meta_description }}
-                        </p>
-                        <a href="{{ route('single-news', ['post' => $post]) }}" class="details-btn d-flex justify-content-center align-items-center"><span class="details">@lang('pages.read_more_button')</span><span class="lnr lnr-arrow-right"></span></a>
+                            <div class="">
+                                    <span class="float-right">
+                                        <i class="fa fa-eye"></i>
+                                        {{ $post->view_count }}
+                                    </span>
+                                    <span class="ml-auto">
+                                        <i class="fa fa-calendar"></i>
+                                        {{ $post->created_at->format("Y-d-m") }}
+                                    </span>
+                            </div>
+                            <a href="" style="color: #546bb1;">
+                                <p class="">{{ $post->{'title_'.$lang} }}</p>
+                            </a>
+                        </div>
                     </div>
                 @endforeach
             </div>
@@ -119,7 +130,7 @@
     {{-- Start Album area --}}
 
 
-    <section class="mb-5" style="margin-top: -10em">
+    <section class="mb-5" style="margin-top: 2em">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="menu-content pb-10 col-lg-8">

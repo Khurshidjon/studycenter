@@ -11,7 +11,7 @@
     .benefits-items {
         text-align: center;
         background-color: #fff;
-        padding: 10px;
+        padding: 30px;
         text-transform: uppercase;
         border: none;
         font-family:'circe', "sans-serif" !important;
@@ -65,14 +65,14 @@
         </div>
         <div class="row" style="margin-bottom: 50px">
             @foreach ($benefits as $benefit)
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="row">
                     <div class="col-6">
                         <div class="benefits-items">
                             <img src="{{ asset('storage') .'/'. $benefit->image }}" class="" style="margin: 1px; width: 100%;" alt="">
                         </div>
                     </div>
-                    <div class="col-md-6" style="padding-top: 15px;">
+                    <div class="col-md-6" style="margin: auto 0">
                         <p>{!! $benefit->{'benefit_'.$lang} !!}</p>
                     </div>
                 </div>
