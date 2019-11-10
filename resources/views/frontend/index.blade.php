@@ -36,7 +36,7 @@
                 <div class="banner-content col-lg-9 col-md-12" id="text-banner">
                     <p class="pt-10 pb-10">
                     </p>
-                    <a href="{{ route('about-us') }}"  style="position: relative; color: #546bb1 ; background: rgba(0,0,0,0.4); font-size: 2em; height: 2em; padding: 0 1.5em;" class="primary-btn text-uppercase">@lang('pages.home_banner_button')</a>
+                    <a href="{{ route('about-us') }}"  style="position: relative; color: #ffffff ; background: rgba(0,0,0,0.4); font-size: 2em; height: 2em; padding: 0 1.5em;" class="primary-btn text-uppercase">@lang('pages.home_banner_button')</a>
                 </div>
             </div>
         </div>

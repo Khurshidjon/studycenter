@@ -49,7 +49,7 @@
             background-color: rgba(4,9,30,0.5);
         }
         .banner-content .primary-btn{
-            background-color: #546bb1 ;
+            background-color: #546bb1;
         }
         .single-feature:hover .title{
             background: rgba(84,107,177,0.9);
