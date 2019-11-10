@@ -18,7 +18,7 @@
     .post-area .card-body{
         height: 18em;
         overflow: hidden;
-        padding-bottom: 110px;
+        padding-bottom: 115px;
         padding-left: 1px;
         text-justify: auto;
         padding-right: 1px;
@@ -105,17 +105,17 @@
                             <a href="{{ route('single-news', ['post' => $post]) }}">
                                 <img class="card-img-top rounded" src="{{ asset('storage') .'/'. $post->image }}" alt="">
                             </a>
-                            <div class="">
-                                    <span class="float-right">
-                                        <i class="fa fa-eye"></i>
-                                        {{ $post->view_count }}
-                                    </span>
-                                    <span class="ml-auto">
-                                        <i class="fa fa-calendar"></i>
-                                        {{ $post->created_at->format("Y-d-m") }}
-                                    </span>
+                            <div style="font-size: 13px; color: grey">
+                                <span class="float-right">
+                                    <i class="fa fa-eye"></i>
+                                    {{ $post->view_count }}
+                                </span>
+                                <span class="ml-auto">
+                                    <i class="fa fa-calendar"></i>
+                                    {{ $post->created_at->format("Y-d-m") }}
+                                </span>
                             </div>
-                            <a href="" style="color: #546bb1;">
+                            <a href="{{ route('single-news', ['post' => $post]) }}" style="color: #546bb1;">
                                 <p class="">{{ $post->{'title_'.$lang} }}</p>
                             </a>
                         </div>
