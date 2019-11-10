@@ -43,7 +43,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Blog::take(4)->get();
+        $posts = Blog::take(6)->get();
         $albums = Album::all();
         $courses = Course::all();
         $universities = Country::all();
@@ -156,9 +156,9 @@ class HomeController extends Controller
             'universities' => $universities
         ]);
     }
-    
-    
-    
+
+
+
     public function languages(Request $request)
     {
         $menu = SiteMenu::where('site_url', $request->getSchemeAndHttpHost().'/'.$request->path())->first();
