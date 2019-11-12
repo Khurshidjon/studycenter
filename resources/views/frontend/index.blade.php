@@ -6,20 +6,30 @@
 <style>
 
     .gallery-area .card-body{
-        height: 14em;
+        height: 12em;
         overflow: hidden;
         text-align: center;
         padding-bottom: 40px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
         color: #546bb1;
+    }
+    .gallery-area .card{
+        margin-bottom: 20px;
     }
     .gallery-area .card-body img{
         height: 100%;
     }
+    .post-area .card{
+        margin: 5px 0;
+    }
     .post-area .card-body{
-        height: 18em;
+        height: 14em;
         overflow: hidden;
-        padding-bottom: 115px;
+        padding-bottom: 100px;
         padding-left: 1px;
+        padding-top: 0px;
         text-justify: auto;
         padding-right: 1px;
         color: #546bb1;
@@ -32,7 +42,7 @@
     <section class="banner-area relative" id="home" @if($banner->home_banner) style="height: 25em; background: url('{{ asset('storage') .'/'. $banner->home_banner}}') no-repeat center; background-size: cover" @endif>
         <div class="overlay overlay-bg"></div>
         <div class="container">
-            <div class="row  align-items-center justify-content-between">
+            <div class="row align-items-center justify-content-between">
                 <div class="banner-content col-lg-9 col-md-12" id="text-banner">
                     <p class="pt-10 pb-10">
                     </p>
@@ -100,24 +110,28 @@
             </div>
             <div class="row post-area">
                 @foreach($posts as $post)
-                    <div class="col-lg-4 col-md-6 card">
-                        <div class="card-body">
-                            <a href="{{ route('single-news', ['post' => $post]) }}">
-                                <img class="card-img-top rounded" src="{{ asset('storage') .'/'. $post->image }}" alt="">
-                            </a>
-                            <div style="font-size: 13px; color: grey">
-                                <span class="float-right">
-                                    <i class="fa fa-eye"></i>
-                                    {{ $post->view_count }}
-                                </span>
-                                <span class="ml-auto">
-                                    <i class="fa fa-calendar"></i>
-                                    {{ $post->created_at->format("Y-d-m") }}
-                                </span>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <a href="{{ route('single-news', ['post' => $post]) }}">
+                                    <img class="card-img-top rounded" src="{{ asset('storage') .'/'. $post->image }}" alt="">
+                                </a>
+                                <div class="px-3" style="font-size: 13px; color: grey">
+                                    <span class="float-right">
+                                        <i class="fa fa-eye"></i>
+                                        {{ $post->view_count }}
+                                    </span>
+                                    <span class="ml-auto">
+                                        <i class="fa fa-calendar"></i>
+                                        {{ $post->created_at->format("Y-d-m") }}
+                                    </span>
+                                </div>
+                                <div class="px-2" style="font-size: 16px; line-height: 18px">
+                                    <a href="{{ route('single-news', ['post' => $post]) }}" style="padding: 10px 0; color: #546bb1;">
+                                        <p class="">{{ $post->{'title_'.$lang} }}</p>
+                                    </a>
+                                </div>
                             </div>
-                            <a href="{{ route('single-news', ['post' => $post]) }}" style="color: #546bb1;">
-                                <p class="">{{ $post->{'title_'.$lang} }}</p>
-                            </a>
                         </div>
                     </div>
                 @endforeach
@@ -141,11 +155,13 @@
             </div>
             <div class="row gallery-area">
                 @foreach($albums as $album)
-                    <div class="col-lg-4 col-md-6 card">
-                        <a href="{{ route('gallery.items', ['album' => $album]) }}" class="card-body">
-                            <img class="card-img-top rounded" src="{{ asset('storage') .'/'. $album->filename }}" alt="">
-                            <p class="mt-2">{{ $album->{'album_name_'.$lang} }}</p>
-                        </a>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <a href="{{ route('gallery.items', ['album' => $album]) }}" class="card-body">
+                                <img class="card-img-top rounded" src="{{ asset('storage') .'/'. $album->filename }}" alt="">
+                                <p class="mt-2">{{ $album->{'album_name_'.$lang} }}</p>
+                            </a>
+                        </div>
                     </div>
                 @endforeach
             </div>

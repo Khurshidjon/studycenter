@@ -43,7 +43,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Blog::take(6)->get();
+        $posts = Blog::take(8)->get();
         $albums = Album::all();
         $courses = Course::all();
         $universities = Country::all();

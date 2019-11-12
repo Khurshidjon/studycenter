@@ -19,6 +19,7 @@
     <title>Центр языковой подготовки</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link href="http://allfont.ru/allfont.css?fonts=montserrat-black" rel="stylesheet" type="text/css" />
     <link href="{{ asset('fonts/Circle-Regular.otf') }}">
     <!--
     CSS
@@ -38,7 +39,8 @@
     @endphp
     <style>
         body{
-            font-family: "Times New Roman", 'sans-serif' !important;
+            font-family: 'Montserrat Black', arial !important;
+            /* font-family: "Times New Roman", 'sans-serif' !important; */
             font-size: 18px !important;
             background-color: #f9f9f9;
         }
